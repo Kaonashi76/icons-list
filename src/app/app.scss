@@ -102,6 +102,32 @@ h1 {
   }
 }
 
+.size-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 0.9rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: #fff;
+  font-size: 0.9rem;
+  color: #4b5563;
+  white-space: nowrap;
+
+  input[type='range'] {
+    width: 110px;
+    accent-color: #6366f1;
+    cursor: pointer;
+  }
+
+  &__value {
+    min-width: 2.7rem;
+    text-align: right;
+    color: #111827;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
 .status {
   padding: 4rem 0;
   color: #6b7280;
@@ -147,11 +173,9 @@ h1 {
 }
 
 .card__glyph {
-  // одинаковый размер для шрифтовых (outline/fill) и svg (color) иконок
-  --st-icon-size: 1.9rem;
-  height: 2rem;
-  font-size: 1.9rem;
+  // размер задаётся через --st-icon-size / --st-icons-font-size на .catalog
   color: #1f2937;
+  line-height: 1;
 }
 
 .card__name {

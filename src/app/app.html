@@ -37,6 +37,19 @@
       [value]="query()"
       (input)="query.set($any($event.target).value)"
     />
+
+    <label class="size-control">
+      <span class="size-control__label">Размер</span>
+      <input
+        type="range"
+        min="16"
+        max="64"
+        step="2"
+        [value]="size()"
+        (input)="size.set(+$any($event.target).value)"
+      />
+      <span class="size-control__value">{{ size() }}px</span>
+    </label>
   </div>
 </header>
 
@@ -45,7 +58,12 @@
 } @else if (groups().length === 0) {
   <p class="status">Ничего не найдено по запросу «{{ query() }}».</p>
 } @else {
-  @for (group of groups(); track group.category) {
+  <div
+    class="catalog"
+    [style.--st-icon-size]="size() + 'px'"
+    [style.--st-icons-font-size]="size() + 'px'"
+  >
+    @for (group of groups(); track group.category) {
     <section class="category">
       <h2 class="category__title">{{ categoryLabel(group.category) }}</h2>
 
@@ -58,5 +76,6 @@
         }
       </ul>
     </section>
-  }
+    }
+  </div>
 }

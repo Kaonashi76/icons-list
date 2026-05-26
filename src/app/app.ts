@@ -50,6 +50,9 @@ export class App {
 
   protected readonly query = signal('');
 
+  /** Размер иконок в пикселях (управляется слайдером). */
+  protected readonly size = signal(32);
+
   /** Выбранная вкладка-вариант; null = взять первую доступную. */
   private readonly selectedVariant = signal<string | null>(null);
 
