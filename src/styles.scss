@@ -1,0 +1,19 @@
+@use '@sevtech/icons/icons.css';
+
+/* Глобальные стили. Иконочный шрифт (.st / .st-*) подключаем здесь,
+   чтобы классы работали глобально и не упирались в бюджет стилей компонента. */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
