@@ -29,7 +29,12 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        # npm ci ставит ровно версию из lock и не подтянет более свежую,
+        # поэтому ставим всё через npm install и принудительно тянем
+        # последнюю версию @sevtech/icons на каждом запуске
+        run: |
+          npm install
+          npm install @sevtech/icons@latest --no-save
 
       - name: Build
         # base-href берётся из имени репозитория → /icons-list/
